@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace lego2
 {
@@ -29,6 +30,16 @@ namespace lego2
 
         public static DynamicArray<Piece> getPiecesByColor(string givenColor)
         {
+            if (totalLegoPieces.Count() == 0)
+            {
+                Console.WriteLine("No hay piezas para buscar");
+                return null;
+            }
+            if (!colors.Contains(givenColor))
+            {
+                Console.WriteLine("No hay piezas de color " + givenColor);
+                return null;
+            }
             DynamicArray<Piece> returnList = new DynamicArray<Piece>();
             for (int i = 0; i < totalLegoPieces.Count(); i++)
                 if (totalLegoPieces.data[i].color == givenColor)

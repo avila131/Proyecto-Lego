@@ -1,6 +1,5 @@
 ﻿using System;
-using System;
-using System.Diagnostics;
+using System.Linq;
 
 namespace lego2
 {
@@ -10,9 +9,11 @@ namespace lego2
         public static LinkedList<LegoSet> setsLinkedList = new LinkedList<LegoSet>();
         public static DynamicArray<Piece> totalLegoPieces = new DynamicArray<Piece>();
         public static Queue<LegoSet> userWishQueue = new Queue<LegoSet>();
+        public static string[] colors = { "Red", "Magenta", "Brown", "Purple", "Violet", "Orange", "Pink", "Green", "Yellow", "Black", "Blue" };
          
         static void Main(string[] args)
         {
+            Console.WriteLine("Se inicia la carga de datos...");
             loadData();
             setsLinkedList.popBack();
 
